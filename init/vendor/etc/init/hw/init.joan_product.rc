@@ -1,0 +1,42 @@
+# joan_product init rc
+
+# For Kinibi(t-base), lge-secureboot@lge.com
+import /vendor/etc/init/hw/init.kinibi.rc
+
+on post-fs-data
+    # NFC: create data/nfc for nv storage
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
+    mkdir /data/vendor/nfc 0770 nfc nfc
+
+# LGE IMS ipsec solution [START]
+service ipsecclient /system/bin/ipsecclient
+    class main
+    group system net_admin net_raw
+    disabled
+
+service ipsecstarter /system/bin/ipsecstarter
+    class main
+    user system
+    group system net_admin net_raw
+# LGE IMS ipsec solution [END]
+
+# LGE IMS Features - To interwork with QMI WMS (64-bit exe/lib)
+service imswmsproxy /system/bin/imswmsproxy
+    class main
+    user system
+    group radio system net_admin net_raw
+# LGE IMS Features with QMI WMS (64-bit exe/lib)[END]
+
+on post-fs-data
+# 2015-09-12 kwangbin.yim@lge.com LGP_DATA_TCPIP_MPTCP_SKT [START]
+service socks-v6 /system/xbin/redsocks-v6 -c /system/etc/redsocks_v6.conf
+    disabled
+    user root
+
+    on property:lg.data.socks=1
+        start socks-v6
+
+    on property:lg.data.socks=0
+        stop socks-v6
+# 2015-09-12 kwangbin.yim@lge.com LGP_DATA_TCPIP_MPTCP_SKT [END]
