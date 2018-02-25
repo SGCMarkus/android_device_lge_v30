@@ -23,6 +23,9 @@ INITIAL_COPYRIGHT_YEAR=2018
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
+DEVICE=v30
+VENDOR=lge
+
 LINEAGE_ROOT="$MY_DIR"/../../..
 
 HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
