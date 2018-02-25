@@ -18,22 +18,22 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from dumpling device
+# Inherit from v30 device
 $(call inherit-product, device/lge/v30/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_joan
-PRODUCT_DEVICE := joan
+PRODUCT_NAME := lineage_v30
+PRODUCT_DEVICE := v30
 PRODUCT_MANUFACTURER := LGE
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H930
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
-TARGET_VENDOR_PRODUCT_NAME := joan
-TARGET_VENDOR_DEVICE_NAME := joan
+TARGET_VENDOR_PRODUCT_NAME := v30
+TARGET_VENDOR_DEVICE_NAME := v30
 
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=joan PRODUCT_NAME=joan
 
