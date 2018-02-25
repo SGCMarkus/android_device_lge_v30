@@ -22,7 +22,7 @@
 # definition file).
 #
 
-$(call inherit-product, vendor/lge/v30-common/v30-vendor.mk)
+$(call inherit-product, vendor/lge/v30/v30-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
