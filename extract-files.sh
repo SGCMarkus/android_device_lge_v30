@@ -52,12 +52,14 @@ while [ "$1" != "" ]; do
 done
 
 if [ -z "$SRC" ]; then
-    SRC=/home/markus/v30/oreo_vendor
+    SRC=/home/markus/v30/oreo_stock/superrs-kitchen/superr_oreo_stock/
 fi
 
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
 
+extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 
