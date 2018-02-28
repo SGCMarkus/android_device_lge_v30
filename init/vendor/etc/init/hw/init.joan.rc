@@ -1,3 +1,8 @@
+service loggy /system/bin/sh /loggy.sh
+    class main
+    user root
+    oneshot
+
 # This file will be installed as /init.{ro.hardware}.rc
 import /init.qcom.rc
 import /vendor/etc/init/hw/init.qcom.rc
