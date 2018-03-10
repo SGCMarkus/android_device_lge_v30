@@ -1,7 +1,7 @@
 # joan_product init rc
 
 # For Kinibi(t-base), lge-secureboot@lge.com
-import /vendor/etc/init/hw/init.kinibi.rc
+#import /vendor/etc/init/hw/init.kinibi.rc
 
 on post-fs-data
     # NFC: create data/nfc for nv storage

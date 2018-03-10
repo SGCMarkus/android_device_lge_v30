@@ -89,6 +89,9 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 -
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# ADB
+TARGET_USES_LEGACY_ADB_INTERFACE := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 
